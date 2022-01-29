@@ -1,0 +1,6 @@
+INFO    2022-01-28 23:07:57,258 [main] com.pgt360.netty.config.NettyServer  - **********************************************************
+INFO    2022-01-28 23:07:57,261 [main] com.pgt360.netty.config.NettyServer  - **********Servidor iniciado en el puerto: 8090************
+INFO    2022-01-28 23:07:57,262 [main] com.pgt360.netty.config.NettyServer  - **********************************************************
+INFO    2022-01-28 23:13:21,449 [main] com.pgt360.netty.config.NettyServer  - **********************************************************
+INFO    2022-01-28 23:13:21,451 [main] com.pgt360.netty.config.NettyServer  - **********Servidor iniciado en el puerto: 8090************
+INFO    2022-01-28 23:13:21,452 [main] com.pgt360.netty.config.NettyServer  - **********************************************************
