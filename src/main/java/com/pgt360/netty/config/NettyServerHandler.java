@@ -55,7 +55,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter{
     public void handlerAdded(ChannelHandlerContext ctx){
         Channel incoming = ctx.channel();
         NettyServerHandler.ctx = ctx;
-        logger.info("[SERVER]-"+incoming.remoteAddress()+" SE CONECTÓ DISPOSITIVO CON EL ID:"+incoming.id()+"\n");
+        logger.info("[SERVER]-"+incoming.remoteAddress()+" SE CONECTÓ DISPOSITIVO CON EL ID:"+incoming.id());
         
     }
     
