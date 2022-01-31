@@ -14,6 +14,7 @@ com\pgt360\util\FlowProcess.class
 com\pgt360\service\ConexionServiceLocal.class
 com\pgt360\util\ProcessPos.class
 com\pgt360\dto\ConexionQueryDto.class
+com\pgt360\dto\DispositivoQueryDto.class
 com\pgt360\model\Base.class
 com\pgt360\service\DispositivoServiceLocal.class
 com\pgt360\model\DominioValor.class

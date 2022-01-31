@@ -8,6 +8,7 @@
   	<class>com.pgt360.model.Base</class>
   	<class>com.pgt360.model.Caja</class>
   	<class>com.pgt360.model.Comercio</class>
+  	<class>com.pgt360.model.Conexion</class>
   	<class>com.pgt360.model.Dispositivo</class>
   	<class>com.pgt360.model.Dominio</class>
   	<class>com.pgt360.model.DominioValor</class>

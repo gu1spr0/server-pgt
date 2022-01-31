@@ -118,7 +118,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter{
     	ConexionAddDto vConexionAddDto = new ConexionAddDto();
     	vConexionAddDto.setIdCanal(ctx.channel().id().toString());
     	vConexionAddDto.setState(Constants.STATE_ACTIVE);
-    	vConexionAddDto.setIdDispositivo(2L);
+    	vConexionAddDto.setIdDispositivo(2);
     	Date vDate = new Date();
     	vConexionAddDto.setDateConnection(vDate);
     	vConexionAddDto.setHourConnection(vDate);

@@ -12,7 +12,9 @@ import com.pgt360.dao.FlujoDao;
 import com.pgt360.dto.ConexionAddDto;
 import com.pgt360.dto.ConexionQueryDto;
 import com.pgt360.dto.ConexionUpdateDto;
+import com.pgt360.dto.DispositivoQueryDto;
 import com.pgt360.model.Conexion;
+import com.pgt360.model.Dispositivo;
 import com.pgt360.util.Constants;
 import com.pgt360.util.FileProperties;
 
@@ -21,6 +23,7 @@ public class ConexionService implements ConexionServiceLocal{
 	private Properties properties;
     private FileProperties fileProperties;
     private static ConexionDao conexionDao;
+    private DispositivoServiceLocal dispositivoServiceLocal;
 
     public ConexionService() {
     	try {
@@ -31,6 +34,7 @@ public class ConexionService implements ConexionServiceLocal{
 			logger.error(e.getMessage());
 		}
         conexionDao = new ConexionDao();
+        this.dispositivoServiceLocal = new DispositivoService();
     }
 	@Override
 	public ConexionQueryDto agregarConexion(ConexionAddDto pConexionAddDto) {
@@ -40,7 +44,15 @@ public class ConexionService implements ConexionServiceLocal{
 		Conexion vConexion = new Conexion();
 		ConexionQueryDto vConexionQueryDto = new ConexionQueryDto();
 		try {
-			BeanUtils.copyProperties(pConexionAddDto, vConexion);
+			BeanUtils.copyProperties(vConexion, pConexionAddDto);
+			
+			DispositivoQueryDto vDispositivoQueryDto= this.dispositivoServiceLocal.buscarDispositivo(pConexionAddDto.getIdDispositivo());
+			if(vDispositivoQueryDto==null) {
+				logger.error("vDispositivoQueryDto nulo!");
+			}
+			Dispositivo vDispositivo = new Dispositivo();
+			BeanUtils.copyProperties(vDispositivo, vDispositivoQueryDto);
+			vConexion.setDispositivo(vDispositivo);
 			Conexion vNewConexion = conexionDao.persistirEntidad(vConexion);
 			if(vNewConexion==null) {
 				logger.error("La entidad vConexion no se guardo correctamente!");

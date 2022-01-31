@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 public class ConexionAddDto {
     private String idCanal;
-    private Long idDispositivo;
+    private int idDispositivo;
     private Date dateConnection;
     private Date hourConnection;
     private Date dateDisconnect;
