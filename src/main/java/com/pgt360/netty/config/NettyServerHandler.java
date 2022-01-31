@@ -9,6 +9,7 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 
 import com.pgt360.dto.ConexionAddDto;
+import com.pgt360.service.ConexionService;
 import com.pgt360.service.ConexionServiceLocal;
 import com.pgt360.service.FlujoService;
 import com.pgt360.service.FlujoServiceLocal;
@@ -56,6 +57,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter{
         this.fileProperties = new FileProperties();
         this.properties = this.fileProperties.getConfiguration();
         logger = this.fileProperties.getLogger(NettyServerHandler.class);
+        this.conexionServiceLocal = new ConexionService();
     }
     
     @Override
