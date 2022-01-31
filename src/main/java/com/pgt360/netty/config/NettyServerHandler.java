@@ -4,8 +4,14 @@ package com.pgt360.netty.config;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.charset.Charset;
+import java.util.Date;
 import java.util.Properties;
 import org.apache.log4j.Logger;
+
+import com.pgt360.dto.ConexionAddDto;
+import com.pgt360.service.ConexionServiceLocal;
+import com.pgt360.service.FlujoService;
+import com.pgt360.service.FlujoServiceLocal;
 import com.pgt360.util.Constants;
 import com.pgt360.util.FileProperties;
 import com.pgt360.util.FlowProcess;
@@ -21,7 +27,8 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter{
 	public static  ChannelHandlerContext ctx;
     private Properties properties;
     private FileProperties fileProperties;
-    
+    private FlujoServiceLocal flujoServiceLocal;
+    private ConexionServiceLocal conexionServiceLocal;
     int paso = 1;
     int tam = 0;
     String ack = "06";
@@ -106,10 +113,15 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter{
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
     	logger.info("Canal con id:"+ctx.channel().id()+" activo");
-    	//TODO: Una vez verificado que el canal se conectó y esta activo agregar a la base de datos.
+    	ConexionAddDto vConexionAddDto = new ConexionAddDto();
+    	vConexionAddDto.setIdCanal(ctx.channel().id().toString());
+    	vConexionAddDto.setState(Constants.STATE_ACTIVE);
+    	vConexionAddDto.setIdDispositivo(2L);
+    	Date vDate = new Date();
+    	vConexionAddDto.setDateConnection(vDate);
+    	vConexionAddDto.setHourConnection(vDate);
+    	this.conexionServiceLocal.agregarConexion(vConexionAddDto);
     	logger.info("Se agregó canal a la base de datos");
-    	//CommunicationPos communicationPos = new CommunicationPos();
-        //communicationPos.sendSolicitudInicializar(channelDto);
         
         
     }

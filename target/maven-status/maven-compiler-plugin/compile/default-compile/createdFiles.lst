@@ -1,14 +1,19 @@
 com\pgt360\service\ComercioService.class
+com\pgt360\dto\ConexionUpdateDto.class
 com\pgt360\model\Flujo.class
 com\pgt360\dto\FlujoAddDto.class
 com\pgt360\dao\CajaDao.class
 com\pgt360\model\Dispositivo.class
 com\pgt360\service\CajaServiceLocal.class
 com\pgt360\service\ComercioServiceLocal.class
+com\pgt360\dao\ConexionDao.class
 com\pgt360\util\CommunicationPos.class
+com\pgt360\service\ConexionService.class
 com\pgt360\util\Constants.class
 com\pgt360\util\FlowProcess.class
+com\pgt360\service\ConexionServiceLocal.class
 com\pgt360\util\ProcessPos.class
+com\pgt360\dto\ConexionQueryDto.class
 com\pgt360\model\Base.class
 com\pgt360\service\DispositivoServiceLocal.class
 com\pgt360\model\DominioValor.class
@@ -22,6 +27,7 @@ com\pgt360\dao\comun\GenericDao.class
 com\pgt360\dto\FlujoUpdateDto.class
 com\pgt360\model\Dominio.class
 com\pgt360\dto\FlujoQueryDto.class
+com\pgt360\dto\ConexionAddDto.class
 com\pgt360\dao\DominioValorDao.class
 com\pgt360\dao\FlujoDao.class
 com\pgt360\model\Conexion.class

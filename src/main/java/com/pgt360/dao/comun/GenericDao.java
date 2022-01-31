@@ -24,8 +24,10 @@ public abstract class GenericDao<T> {
 		this.claseEntidad = claseEntidad;
 	}
 	
-	public void persistirEntidad(T entidad) {
+	public T persistirEntidad(T entidad) {
 		this.entityManager.persist(entidad);
+		this.entityManager.flush();
+		return entidad;
 	}
 	
 	public T actualizarEntidad(T entidad) {
